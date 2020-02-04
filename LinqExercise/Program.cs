@@ -21,8 +21,8 @@ namespace LinqExercise
              */
 
             // DONE -- Print the Sum and Average of numbers
-            int sum = numbers.Sum(num => num);
-            double avg = numbers.Average(num => num);
+            int sum = numbers.Sum();
+            double avg = numbers.Average();
             Console.WriteLine(sum);
             Console.WriteLine(avg);
             Console.WriteLine("--------------------");
@@ -50,7 +50,7 @@ namespace LinqExercise
             }
             Console.WriteLine("--------------------");
 
-            // DONE --Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!**
+            // DONE -- Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!**
             var ascendingList = new List<int>();
             ascendingList = numbersAscending.ToList();
 
@@ -72,7 +72,7 @@ namespace LinqExercise
             var employees = CreateEmployees();
 
             // DONE -- Print all the employees' FullName properties to the console only if their FirstName starts with a C OR an S.
-            //Order this in acesnding order by FirstName.
+            // DONE -- Order this in acesnding order by FirstName.
             foreach (Employee employee in employees.Where(name => name.FirstName.ToLower().StartsWith('c') || 
                                                                   name.FirstName.ToLower().StartsWith('s'))
                                                                   .OrderBy(name => name.FirstName))
@@ -82,7 +82,7 @@ namespace LinqExercise
             Console.WriteLine("--------------------");
 
             // DONE -- Print all the employees' FullName and Age who are over the age 26 to the console.
-            //Order this by Age first and then by FirstName in the same result.
+            // DONE -- Order this by Age first and then by FirstName in the same result.
             foreach(var employee in employees.Where(name => name.Age > 26).OrderBy(name => name.FirstName).OrderBy(name => name.Age))
             {
                 Console.WriteLine($"{employee.FullName}, {employee.Age}");
@@ -102,7 +102,7 @@ namespace LinqExercise
             Console.WriteLine(sumYears / count);
             Console.WriteLine("--------------------");
 
-            //Add an employee to the end of the list without using employees.Add()
+            // DONE -- Add an employee to the end of the list without using employees.Add()
             employees.Insert(employees.Count, new Employee("Brian", "Chan", 31, 0));
             foreach(var employee in employees)
             {

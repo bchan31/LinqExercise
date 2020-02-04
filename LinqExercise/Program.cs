@@ -54,10 +54,14 @@ namespace LinqExercise
             var ascendingList = new List<int>();
             ascendingList = numbersAscending.ToList();
 
-            Console.WriteLine(ascendingList[0]);
+            foreach (int num in ascendingList.SkipLast(6))
+            {
+                Console.WriteLine(num);
+            }
+            /*Console.WriteLine(ascendingList[0]);
             Console.WriteLine(ascendingList[1]);
             Console.WriteLine(ascendingList[2]);
-            Console.WriteLine(ascendingList[3]);
+            Console.WriteLine(ascendingList[3]);*/
             Console.WriteLine("--------------------");
 
             // DONE -- Change the value at index 4 to your age, then print the numbers in decsending order

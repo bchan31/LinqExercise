@@ -89,7 +89,7 @@ namespace LinqExercise
             }
             Console.WriteLine("--------------------");
 
-            //Print the Sum and then the Average of the employees' YearsOfExperience
+            // DONE -- Print the Sum and then the Average of the employees' YearsOfExperience
             //if their YOE is less than or equal to 10 AND Age is greater than 35
             double sumYears = 0;
             int count = 0;
@@ -100,10 +100,14 @@ namespace LinqExercise
             }
             Console.WriteLine(sumYears);
             Console.WriteLine(sumYears / count);
+            Console.WriteLine("--------------------");
 
             //Add an employee to the end of the list without using employees.Add()
-
-
+            employees.Insert(employees.Count, new Employee("Brian", "Chan", 31, 0));
+            foreach(var employee in employees)
+            {
+                Console.WriteLine(employee.FullName);
+            }
             Console.WriteLine();
 
             Console.ReadLine();
